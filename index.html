@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart E-Library - System Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">📚 LibSphere</div>
+    <nav>
+      <a href="index.html" class="active">📊 Dashboard</a>
+      <a href="books.html">📖 Manage Books</a>
+      <a href="students.html">👨‍🎓 Students Directory</a>
+      <a href="issue.html">🔄 Issue & Return</a>
+      <a href="report.html">📈 Fine Reports</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>System Dashboard</h2>
+      <div class="user-profile">Admin Portal</div>
+    </header>
+
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Total Books</h3>
+          <p id="totalBooks">0</p>
+        </div>
+        <div class="stat-icon" style="background: rgba(52, 152, 219, 0.1); color: #34495e;">📚</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Registered Students</h3>
+          <p id="totalStudents">0</p>
+        </div>
+        <div class="stat-icon" style="background: rgba(46, 204, 113, 0.1); color: #2ecc71;">👨‍🎓</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Active Leases</h3>
+          <p id="totalIssued">0</p>
+        </div>
+        <div class="stat-icon" style="background: rgba(230, 126, 34, 0.1); color: #e67e22;">🔄</div>
+      </div>
+    </div>
+
+    <h3>Quick Management Panels</h3>
+    <div class="grid-menu">
+      <div class="menu-card" onclick="window.location.href='books.html'">
+        <h4>Book Inventory</h4>
+        <p>Add, update, search, and delete books across categories.</p>
+        <span>Explore Base →</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='students.html'">
+        <h4>Student Database</h4>
+        <p>Manage membership records, view class details, and student IDs.</p>
+        <span>View Records →</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='issue.html'">
+        <h4>Circulation Counter</h4>
+        <p>Process modern lightning-fast check-outs and structural returns.</p>
+        <span>Open Counter →</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='report.html'">
+        <h4>Financial Audits</h4>
+        <p>Track late overdues, calculated metrics, and export reports.</p>
+        <span>View Audit →</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

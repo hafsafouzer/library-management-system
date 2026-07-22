@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Audits - LibSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">📚 LibSphere</div>
+    <nav>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="books.html">📖 Manage Books</a>
+      <a href="students.html">👨‍🎓 Students Directory</a>
+      <a href="issue.html">🔄 Issue & Return</a>
+      <a href="report.html" class="active">📈 Fine Reports</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>Financial Audits & Delinquencies</h2>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Export PDF Audit</button>
+    </header>
+
+    <div class="table-card">
+      <h3>Overdue Asset Defaulters</h3>
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Book Code</th>
+            <th>Expected Return Date</th>
+            <th>Days Late</th>
+            <th>Outstanding Arrears</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

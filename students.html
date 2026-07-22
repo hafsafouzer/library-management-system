@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Directory - LibSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">📚 LibSphere</div>
+    <nav>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="books.html">📖 Manage Books</a>
+      <a href="students.html" class="active">👨‍🎓 Students Directory</a>
+      <a href="issue.html">🔄 Issue & Return</a>
+      <a href="report.html">📈 Fine Reports</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>Students Enrollment Directory</h2>
+    </header>
+
+    <div class="form-container">
+      <h3>➕ Register Student Profile</h3>
+      <div class="form-grid">
+        <input type="text" id="stuId" placeholder="Student Admission ID (Unique)">
+        <input type="text" id="stuName" placeholder="Full Registered Name">
+        <input type="text" id="stuClass" placeholder="Department / Class / Grade">
+      </div>
+      <button class="btn btn-primary" onclick="addStudent()">Issue Membership Card</button>
+    </div>
+
+    <div class="table-card">
+      <h3>Active Members Roll</h3>
+      <table id="stuTable">
+        <thead>
+          <tr>
+            <th>Member ID</th>
+            <th>Student Name</th>
+            <th>Class / stream</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <div id="stuUpdateModal" class="modal">
+  <div class="modal-content">
+    <h3>📝 Edit Student Profile</h3>
+    <input type="hidden" id="editOldStuId"> <div class="form-grid" style="grid-template-columns: 1fr; margin-top: 15px;">
+      <input type="text" id="editStuName" placeholder="Update Student Name">
+      <input type="text" id="editStuClass" placeholder="Update Class / Stream">
+    </div>
+    <div style="margin-top: 20px; text-align: right;">
+      <button class="btn" style="background: #cbd5e1; color: var(--text-main);" onclick="closeStuUpdateModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="commitStudentUpdate()">Save Changes</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

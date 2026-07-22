@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Books - LibSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">📚 LibSphere</div>
+    <nav>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="books.html" class="active">📖 Manage Books</a>
+      <a href="students.html">👨‍🎓 Students Directory</a>
+      <a href="issue.html">🔄 Issue & Return</a>
+      <a href="report.html">📈 Fine Reports</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>Book Inventory Management</h2>
+    </header>
+
+    <div class="form-container">
+      <h3>➕ Register New Asset</h3>
+      <div class="form-grid">
+        <input type="text" id="bookId" placeholder="Accession/Book ID (Unique)">
+        <input type="text" id="bookName" placeholder="Book Title">
+        <input type="text" id="author" placeholder="Author Name">
+        <select id="category">
+          <option value="Science">Science & Technology</option>
+          <option value="Story">Fiction / Stories</option>
+          <option value="GK">General Knowledge</option>
+          <option value="Tamil">Tamil Literature</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="addBook()">Save to Database</button>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Catalog Master List</h3>
+        <input type="text" id="searchBook" class="search-bar" placeholder="🔍 Search catalogue dynamically..." onkeyup="showBooks()">
+      </div>
+      <table id="bookTable">
+        <thead>
+          <tr>
+            <th>Asset ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Classification</th>
+            <th>Availability State</th>
+            <th>Action Matrix</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <div id="updateModal" class="modal">
+  <div class="modal-content">
+    <h3>📝 Edit Asset Records</h3>
+    <input type="hidden" id="editOldBookId"> <div class="form-grid" style="grid-template-columns: 1fr; margin-top: 15px;">
+      <input type="text" id="editBookName" placeholder="Update Book Title">
+      <input type="text" id="editAuthor" placeholder="Update Author Name">
+      <select id="editCategory">
+        <option value="Science">Science & Technology</option>
+        <option value="Story">Fiction / Stories</option>
+        <option value="GK">General Knowledge</option>
+        <option value="Tamil">Tamil Literature</option>
+      </select>
+    </div>
+    <div style="margin-top: 20px; text-align: right;">
+      <button class="btn" style="background: #cbd5e1; color: var(--text-main);" onclick="closeUpdateModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="commitBookUpdate()">Save Changes</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

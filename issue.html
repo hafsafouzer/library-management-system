@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue / Return - LibSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">📚 LibSphere</div>
+    <nav>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="books.html">📖 Manage Books</a>
+      <a href="students.html">👨‍🎓 Students Directory</a>
+      <a href="issue.html" class="active">🔄 Issue & Return</a>
+      <a href="report.html">📈 Fine Reports</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h2>Circulation & Log Engine</h2>
+    </header>
+
+    <div class="form-container">
+      <h3>🔄 Authorize Asset Checkout</h3>
+      <div class="form-grid">
+        <input type="text" id="issueStuId" placeholder="Verify Student Admission ID">
+        <input type="text" id="issueBookId" placeholder="Verify Asset Book ID">
+      </div>
+      <button class="btn btn-success" onclick="issueBook()">Commit Issue Transaction</button>
+    </div>
+
+    <div class="table-card">
+      <h3>Leased Inventory Log</h3>
+      <table id="issueTable">
+        <thead>
+          <tr>
+            <th>Borrower ID</th>
+            <th>Asset Code</th>
+            <th>Allocation Date</th>
+            <th>Expected Return</th>
+            <th>Accrued Fine</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
